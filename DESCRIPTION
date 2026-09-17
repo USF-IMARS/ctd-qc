@@ -1,0 +1,21 @@
+Package: ctdqc
+Title: Shared CTD QC, Cleaning, and ERDDAP Ingestion Utilities
+Version: 0.1.0
+Authors@R: person("Tylar", "Murray", email = "murray.tylar@gmail.com", role = c("aut", "cre"))
+Description: Shared utilities for discovering and downloading SFER MBON CTD
+    casts from GCOOS ERDDAP, applying IOOS QARTOD quality-control flags, and
+    cleaning casts with the oce package (ctdTrim/ctdDecimate). Extracted from
+    the previously-duplicated implementations in sfer-mbon-oxygen and
+    sfer-mbon-ctd-viz so both repos, and future consumers, share one
+    implementation instead of drifting copies.
+License: MIT
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    dplyr,
+    here,
+    oce
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
