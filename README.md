@@ -1,22 +1,25 @@
 # ctdqc
 
-Shared utilities for discovering and downloading SFER MBON CTD casts from
-GCOOS ERDDAP, applying IOOS QARTOD quality-control flags, and cleaning casts
-with the [`oce`](https://cran.r-project.org/package=oce) package
-(`ctdTrim`/`ctdDecimate`).
+Helper package for working with SFER MBON CTD cast data.
+
+Include utilities for:
+
+* discovering and downloading SFER MBON CTD casts from GCOOS ERDDAP
+* applying IOOS QARTOD quality-control flags that are included with the data
+* cleaning casts with the [`oce`](https://cran.r-project.org/package=oce) package
+
 
 Extracted from the previously byte-for-byte-duplicated implementations in
 [sfer-mbon-oxygen](https://github.com/marinebon/sfer-mbon-oxygen) and
-[sfer-mbon-ctd-viz](https://github.com/USF-IMARS/sfer-mbon-ctd-viz), whose
-copies had already drifted (`ctd_load_from_csv()`'s `time_elapsed`/`time`
-column fallback existed only in ctd-viz's copy) — this package exists so
-that fix, and future ones, only need to happen once.
+[sfer-mbon-ctd-viz](https://github.com/USF-IMARS/sfer-mbon-ctd-viz).
+
 
 ## Install
 
 ```r
 remotes::install_github("USF-IMARS/ctd-qc")
 ```
+
 
 ## What's here
 
@@ -30,8 +33,4 @@ remotes::install_github("USF-IMARS/ctd-qc")
   run it through `ctdTrim`/`ctdDecimate`.
 - `get_metadata_from_cast_id()` — cruise/station ID parsing.
 
-## Not included
 
-Anything downstream of cleaned CTD data (interpolation, plotting, report
-generation) stays in each consuming repo — this package is QC/ingestion
-only.
